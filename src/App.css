@@ -1,0 +1,67 @@
+
+/* Hero */
+.hero {
+	height: 100vh;
+	background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)),url('./components/assets/Dodge-Viper.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.hero-text {
+	text-align: center;
+	color: white;
+	
+}
+.hero-text p {
+	font: bolder 85px "Comic Sans MS";
+	margin: 10px 0;
+}
+.hero-text span {
+	font: 300 italic 20px "Comic Sans MS";
+}
+.hero-btn {
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background-color: transparent;
+	color: white;
+	font-size: 20px;
+	width: 50px;
+	height: 50px;
+	cursor: pointer;
+	transition: all 0.3s linear;
+}
+.hero-btn:hover {
+	color: orange;
+	border-color: orange;
+	transition: all 0.3s linear;
+}
+
+
+/* footer */
+footer ul {
+	list-style: none;
+	font-size: 14px;
+}
+footer ul li {
+	margin-bottom: 15px;
+	transition: 0.3s all linear;
+}
+footer ul li:hover {
+	color: #f54749;
+	cursor: pointer;
+	transition: 0.5s all linear;
+}
+footer ul li:nth-child(1) {
+	font-weight: bold;
+	cursor: auto;
+	margin-bottom: 20px;
+	color: #000;
+}
+.footer-desc {
+	width: 250px;
+}
+.footer-desc a {
+	cursor: pointer;
+}
+.form-control::placeholder {
+	font-size: 14px;
+}
