@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="container d-flex justify-content-between align-items-start pt-5 pb-5 text-muted">
                 <div style={{width:"300px", fontSize:"14px"}} className="">
                     <img className="mb-3" style={{height:"50px", width:"50px"}} src={logo} alt="logo" />
-                    <p>Our job is to fillling your tummy with delicious food ans with fast and free delivery</p>
+                    <p>Our job is to getting you the best affordable cars with fast and free delivery.</p>
                     <div className="footer-desc mt-5 d-flex justify-content-between align-items-center">
                         <IconContext.Provider value={{size:"30", color:"#f54749",}} >
                         <a href="/#"><FaFacebook /></a>

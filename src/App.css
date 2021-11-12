@@ -74,7 +74,7 @@ footer ul li:nth-child(1) {
 
 @media screen and (max-width:"425px"){
 	.hero-text p {
-		font: bolder 65px "Comic Sans MS";
+		font: bolder 45px "Comic Sans MS";
 	}
 	.fav{
 		font-size: 20px;
