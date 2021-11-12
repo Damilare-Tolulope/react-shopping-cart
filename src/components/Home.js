@@ -16,12 +16,12 @@ const Home = () => {
 
 const Services = () => {
     return (
-        <div className="container" style={{height:"100vh"}}>
-            <div className="text-center m-auto pt-5" style={{width:"500px"}}>
+        <div className="container">
+            <div className="text-center m-auto pt-5">
                 <p style={{color:"#f54749", textTransform:"uppercase", fontSize:"25px", fontWeight:"bold"}} className="pt-5">What we serve</p>
-                <p style={{fontSize:"35px", fontWeight:"bold", textTransform:"capitalize"}}> Your favourite car delivery partner</p>
+                <p className="fav"> Your favourite car delivery partner</p>
             </div>
-            <div className="text-center d-flex justify-content-around align-items-center pt-5">
+            <div className="text-center ml-5 d-block d-lg-flex justify-content-center align-items-center pt-5">
                 <div style={{width:"270px"}}>
                     <img src='' alt="" />
                     <p style={{fontSize:"20px", fontWeight:"bold"}}>Easy to order</p>
