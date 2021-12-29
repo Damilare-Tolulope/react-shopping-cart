@@ -43,7 +43,7 @@ const Menu = () => {
     <div>
       <Container>
         <div
-          style={{ fontSize: "20px", float: "right" }}
+          style={{  fontSize: "20px", float: "right" }}
           className={countStyle()}
         >
           {cart.length} {"       "}
@@ -56,6 +56,8 @@ const Menu = () => {
           {showCart ? "Hide Cart" : "View Cart"}
           <FaShoppingCart />
         </button>
+
+        {/* Toogle cart */}
         {showCart && (
           <CartED
             cart={cart}
@@ -63,15 +65,16 @@ const Menu = () => {
             cartTotal={cartTotal}
           />
         )}
+
         <h1 className="text-center m-5">Menu</h1>
 
         <div className="row justify-content-between align-items-center">
           {items.map((item) => (
             <Card
               key={item.id}
-              style={{ width: "350px", marginBottom: "20px" }}
+              className="card-cart"
             >
-              <CardImg height="250" src={item.image} alt={item.name} />
+              <CardImg className="card-cart-img" src={item.image} alt={item.name} />
               <Card.Body>
                 <Card.Title>
                   {item.name}{" "}
@@ -137,25 +140,16 @@ const CartED = ({ cart, handleRemoveFromCart, cartTotal }) => {
         {cart.map((item) =>
           item ? (
             <div
-              className="row justify-content-between align-items-center p-2"
+              className="cart row justify-content-between align-items-center p-2"
               key={item.id}
-              style={{
-                backgroundColor: "#eee",
-                border: "1px solid #333",
-                borderRadius: "10px",
-                width: "550px",
-                marginBottom: "20px",
-              }}
             >
               <img
-                width="150"
-                height="100"
                 style={{ borderRadius: "10px" }}
                 src={item.image}
                 alt={item.name}
               />
-              <div>
-                <p style={{ fontWeight: "bold", fontSize: "18px" }}>
+              <div className="cart-details">
+                <p>
                   {item.name}{" "}
                   <span className="float-right badge p-2 badge-success">
                     ${item.price}
@@ -163,22 +157,24 @@ const CartED = ({ cart, handleRemoveFromCart, cartTotal }) => {
                 </p>
                 <p className="text-muted">{item.description}</p>
               </div>
-              <div>
-                <button
-                  className="btn btn-sm btn-primary mr-2"
-                  onClick={handleDecrement}
-                >
-                  {" "}
-                  +{" "}
-                </button>
-                <span>5</span>
-                <button
-                  className="btn btn-sm btn-primary ml-2"
-                  onClick={handleIncrement}
-                >
-                  {" "}
-                  +{" "}
-                </button>
+              <div className="cart-actions">
+                <div>
+                    <button
+                    className="btn btn-sm btn-primary mr-2"
+                    onClick={handleDecrement}
+                    >
+                    {" "}
+                    +{" "}
+                    </button>
+                    <span>5</span>
+                    <button
+                    className="btn btn-sm btn-primary ml-2"
+                    onClick={handleIncrement}
+                    >
+                    {" "}
+                    +{" "}
+                    </button>
+                </div>
                 <button
                   onClick={() => handleRemoveFromCart(item)}
                   className="btn btn-danger btn-block mt-3"

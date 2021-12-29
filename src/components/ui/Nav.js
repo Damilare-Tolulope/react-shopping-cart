@@ -23,7 +23,8 @@ const textLink={
     fontSize:'20px'
 }
 const bgStyle = {
-    backgroundColor:"#000"
+    backgroundColor:"#000",
+    // opacity:'0.8'
 }
 
 export default Nav

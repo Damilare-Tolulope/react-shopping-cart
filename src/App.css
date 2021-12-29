@@ -80,3 +80,74 @@ footer ul li:nth-child(1) {
 		font-size: 20px;
 	}
 }
+
+
+/* ========Menu======= */
+.card-cart{
+	width:350px;
+	margin:0 auto 30px;
+}
+.card-cart-img{
+	height:250px;
+}
+
+@media screen and (max-width: 400px) {
+	.card-cart{
+		width:300px;
+	}
+	.card-cart-img{
+		height:200px;
+	}
+}
+
+/* ==========Cart======= */
+.cart{
+	background-color: #eee;
+	border: 1px solid #333;
+	border-radius: 10px;
+	width: 550px;
+	margin-bottom: 20px;
+}
+.cart > img{
+	width: 150px;
+	height:100px;
+}
+.cart-details p{
+	font-weight: bold;
+	font-size: 18px;
+}
+.cart-details p:last-child{
+	font-size: 14px;
+	font-weight: light;
+}
+
+@media screen and (max-width: 728px) {
+	.cart{
+		width:80%;
+		margin:0 auto 20px;
+	}
+	.cart > img{
+		width: 100px;
+		height:80px;
+	}
+}
+@media screen and (max-width: 400px) {
+	.cart{
+		width:90%;
+		display: flex;
+		flex-direction: column;
+	}
+	.cart > img{
+		width: 150px;
+		height:100px;
+		margin-bottom: 10px;
+	}
+	.cart-actions{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.cart-actions .btn-danger {
+		width: 80px;
+	}
+}
