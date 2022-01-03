@@ -1,17 +1,56 @@
 import React, { useState, useEffect } from "react";
 import data from "./data";
+import CartED from "./Cart";
 import { Button } from "react-bootstrap";
 import { Container, Card, CardImg } from "react-bootstrap";
-import { FaMoneyBill, FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart } from "react-icons/fa";
 
-const Menu = () => {
+const Shop = () => {
   const [items] = useState(data);
   const [cart, setCart] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
+  // Cart functions
   const handleAddToCart = (item) => {
     if (cart.includes(item)) return alert("Already in the cart");
     setCart([...cart, item]);
+  };
+
+  const handleIncrement = (i) => {
+
+    const inc = [...cart];
+		const index = inc.indexOf(i);
+		inc[index] = { ...i };
+		inc[index].value++;
+		setCart( inc );
+
+    // cart.map(item => {
+    //   if(item.name === i.name)
+    //     i.value = i.value + 1;
+    //     console.log(i.value);
+        
+    //     return cart
+    // })
+    // setCart(cart)
+    // console.log(i)
+  };
+  
+  const handleDecrement = (i) => {
+    if(i.value === 0) return alert("Quantity can't be less than 0")
+    const inc = [...cart];
+		const index = inc.indexOf(i);
+		inc[index] = { ...i };
+		inc[index].value--;
+		setCart( inc );
+
+
+    // cart.map(item => {
+    //   if(item.name === i.name)
+    //     i.value = i.value - 1;
+    //     console.log(i.value);
+    // })
+    // setCart(cart)
+    // console.log("minus" + i.name);
   };
 
   const [cartTotal, setCartTotal] = useState(0);
@@ -27,12 +66,20 @@ const Menu = () => {
     total();
   }, [cart]);
 
+  // Remove from cart
   const handleRemoveFromCart = (item) => {
     let hardCopy = [...cart];
-    hardCopy = hardCopy.filter((cartItem) => cartItem.id !== item.id);
+    hardCopy = hardCopy.filter((cartItem) => {
+      return (
+        cartItem.id !== item.id,
+        item.value = 0
+      )
+    });
     setCart(hardCopy);
   };
 
+
+  // Style
   const countStyle = () => {
     return cart.length < 1
       ? "badge p-2 mt-2 badge-danger"
@@ -61,6 +108,8 @@ const Menu = () => {
         {showCart && (
           <CartED
             cart={cart}
+            handleIncrement={handleIncrement}
+            handleDecrement={handleDecrement}
             handleRemoveFromCart={handleRemoveFromCart}
             cartTotal={cartTotal}
           />
@@ -115,85 +164,5 @@ const Menu = () => {
   );
 };
 
-export default Menu;
+export default Shop;
 
-
-
-
-
-const CartED = ({ cart, handleRemoveFromCart, cartTotal }) => {
-  const handleIncrement = () => {
-    console.log("increased");
-  };
-  const handleDecrement = () => {
-    console.log("decreased");
-  };
-
-  return (
-    <Container>
-      <h4 className="text-center">Cart Items</h4>
-      <p style={{ fontSize: "20px" }} className="badge p-2 badge-secondary">
-        <FaMoneyBill /> Total price : ${cartTotal}
-      </p>
-
-      <div className="row justify-content-between align-items-center">
-        {cart.map((item) =>
-          item ? (
-            <div
-              className="cart row justify-content-between align-items-center p-2"
-              key={item.id}
-            >
-              <img
-                style={{ borderRadius: "10px" }}
-                src={item.image}
-                alt={item.name}
-              />
-              <div className="cart-details">
-                <p>
-                  {item.name}{" "}
-                  <span className="float-right badge p-2 badge-success">
-                    ${item.price}
-                  </span>
-                </p>
-                <p className="text-muted">{item.description}</p>
-              </div>
-              <div className="cart-actions">
-                <div>
-                    <button
-                    className="btn btn-sm btn-primary mr-2"
-                    onClick={handleDecrement}
-                    >
-                    {" "}
-                    +{" "}
-                    </button>
-                    <span>5</span>
-                    <button
-                    className="btn btn-sm btn-primary ml-2"
-                    onClick={handleIncrement}
-                    >
-                    {" "}
-                    +{" "}
-                    </button>
-                </div>
-                <button
-                  onClick={() => handleRemoveFromCart(item)}
-                  className="btn btn-danger btn-block mt-3"
-                >
-                  Remove
-                </button>
-              </div>
-            </div>
-          ) : (
-                <div>
-                    <p>No Items</p>
-                    <button className="btn btn-info p-2">Continue to Shopping</button>
-                </div>
-          )
-        )}
-
-      </div>
-            <button onClick={()=> alert("Not available!")} className="btn btn-success btn-lg m-3">Checkout</button>
-      <hr />
-    </Container>
-  );
-};

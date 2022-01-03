@@ -10,7 +10,7 @@ const Nav = () => {
                 <Navbar.Collapse id='navbar-content' >
                     <div className="text-center d-flex m-auto justify-content-between align-items-center">
                         <NavLink className="d-block" ><Link style={textLink} to='/' >HOME</Link></NavLink> || 
-                        <NavLink className="d-block" ><Link style={textLink} to='/menu' >MENU</Link></NavLink> 
+                        <NavLink className="d-block" ><Link style={textLink} to='/shop' >SHOP</Link></NavLink> 
                     </div>
                 </Navbar.Collapse>
             </Navbar>

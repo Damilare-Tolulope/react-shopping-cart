@@ -11,6 +11,7 @@ const data = [
         description: "Lorem ipsum dolor sit emet",
         image: audi,
         price: 15000,
+        value: 0,
         quantity: 15
     },
     {
@@ -19,6 +20,7 @@ const data = [
         description: "Lorem ipsum dolor sit emet",
         image: bentley,
         price: 20000,
+        value: 0,
         quantity: 18
     },
     {
@@ -27,6 +29,7 @@ const data = [
         description: "Lorem ipsum dolor sit emet",
         image: bmw,
         price: 17000,
+        value: 0,
         quantity: 35
     },
     {
@@ -35,6 +38,7 @@ const data = [
         description: "Lorem ipsum dolor sit emet",
         image: mercedes,
         price: 30000,
+        value: 0,
         quantity: 5
     },
     {
@@ -43,6 +47,7 @@ const data = [
         description: "Lorem ipsum dolor sit emet",
         image: Ferrari,
         price: 60000,
+        value: 0,
         quantity: 5
     }
 ]
