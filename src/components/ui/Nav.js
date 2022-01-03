@@ -23,7 +23,7 @@ const textLink={
     fontSize:'20px'
 }
 const bgStyle = {
-    backgroundColor:"#000",
+    backgroundColor:"#120D08",
     // opacity:'0.8'
 }
 
